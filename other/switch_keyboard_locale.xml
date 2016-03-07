@@ -1,0 +1,10 @@
+<!-- this is a XML description that has to be passed as paramter to "intl.cpl"
+     to activate the german keyboard layout -->
+<gs:GlobalizationServices xmlns:gs="urn:longhornGlobalizationUnattend">
+    <gs:UserList>
+        <gs:User UserID="Current"/>
+    </gs:UserList>
+    <gs:InputPreferences>
+        <gs:InputLanguageID Action="add" ID="0407:00000407" Default="true"/>
+    </gs:InputPreferences>
+</gs:GlobalizationServices>
