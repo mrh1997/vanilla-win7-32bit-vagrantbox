@@ -1,6 +1,6 @@
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "http://aka.ms/vagrant-win7-ie11"
+  config.vm.box = "IE11Win7"
   config.vm.communicator = "winrm"
 
   config.vm.network "forwarded_port", guest: 3389, host: 33389
