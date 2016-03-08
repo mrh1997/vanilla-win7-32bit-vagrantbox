@@ -9,4 +9,5 @@ Vagrant.configure(2) do |config|
       vb.customize ["modifyvm", :id, "--memory", "1024"]
       vb.customize ["modifyvm", :id, "--cpus", "1"]
   end
+
 end

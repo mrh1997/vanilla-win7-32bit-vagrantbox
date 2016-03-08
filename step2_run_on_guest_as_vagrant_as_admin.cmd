@@ -1,5 +1,6 @@
 ::remove IEUser
 net user IEUser /delete
+del /s /q /f C:\Users\IEUser
 
 ::switch to german keyboard layout for administrator
 control intl.cpl,, /f:"\\VBOXSVR\vagrant\other\switch_keyboard_locale.xml"
