@@ -19,8 +19,19 @@ powershell -c Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 ::aktivieren der winrm
 powershell -c \\VBOXSRV\vagrant\other\enable-winrm.ps1
 
-::rename computer ### zu testen
+::setup SSH
+sc stop OpenSSHd
+mkdir C:\Users\vagrant\.ssh
+copy \\VBOXSRV\vagrant\ssh\config\* "C:\Program Files\OpenSSH\etc"
+copy \\VBOXSRV\vagrant\ssh\keys\vagrant.pub C:\Users\vagrant\.ssh\authorized_keys
+sc start OpenSSHd
+
+::rename computer zu testen
 wmic computersystem where caption='%COMPUTERNAME%' rename 'VANILLA-WIN7-32BIT'
+
+:: install 'choco' (see https://chocolatey.org)
+powershell -c iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+del "C:/ProgramData/chocolatey/choco.exe.old"
 
 ::reboot
 shutdown /r /f /t 0

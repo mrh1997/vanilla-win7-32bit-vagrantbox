@@ -4,6 +4,7 @@ Vagrant.configure(2) do |config|
   config.vm.communicator = "winrm"
 
   config.vm.network "forwarded_port", guest: 3389, host: 33389
+  config.vm.network "forwarded_port", guest: 22, host: 2222
 
   config.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", "1024"]
