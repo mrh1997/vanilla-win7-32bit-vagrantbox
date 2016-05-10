@@ -2,6 +2,9 @@
 net user IEUser /delete
 del /s /q /f C:\Users\IEUser
 
+::no password timeout restriction
+net accounts /maxpwage:unlimited
+
 ::switch to german keyboard layout for administrator
 control intl.cpl,, /f:"\\VBOXSVR\vagrant\other\switch_keyboard_locale.xml"
 
@@ -13,10 +16,10 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v Enab
 sc config WinDefend start= disabled
 sc stop WinDefend
 
-::Ausführung von powershell-dateien im Adminmode erlauben
+::Allow execution of powershell-files in Adminmode
 powershell -c Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
-::aktivieren der winrm
+::aktivate der winrm
 powershell -c \\VBOXSRV\vagrant\other\enable-winrm.ps1
 
 ::setup SSH
