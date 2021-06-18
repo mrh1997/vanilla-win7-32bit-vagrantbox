@@ -19,7 +19,7 @@ It is adapted to match vagrant's requirements:
 To create this box run the following steps
 ---------------------------------------------------------------------------------
 
-* Download most up to date image from "https://dev.windows.com/en-us/microsoft-edge/tools/vms/windows/"
+* Download most up to date image from "https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/"
 * Unpack "IE11 - Win7.box" in ZIP-file to project directory
 * run ``vagrant box add "IE11 - Win7.box" --name IE11Win7``
 * run ``vagrant up`` (wait for timeout message!)
